@@ -1,6 +1,11 @@
 import './App.css';
 import { HashRouter, Switch, Route } from "react-router-dom";
 import SearchBar from './component/SearchBar';
+import HomePage from './pages/HomePage';
+import LogInPage from './pages/LogInPage';
+import SignUpPage from './pages/SignUpPage';
+import ResPage from './pages/ResPage';
+import EditPage from './pages/EditPage';
 
 
 function App() {
@@ -11,19 +16,19 @@ function App() {
           <Switch>
             <h1>Lets start!</h1>
             <Route exact path="/">
-              {/* add homepage */}
+              <HomePage/>
             </Route>
             <Route exact path="/login">
-              {/* add login comp*/}
+              <LogInPage/>
             </Route>
             <Route exact path="/signup">
-              {/* add signup */}
+              <SignUpPage/>
             </Route>
             <Route exact path="/res">
-              {/* add res page */}
+              <ResPage/>
             </Route>
             <Route exact path="/edit">
-              {/* add homepage */}
+              <EditPage/>
             </Route>
               
           </Switch>
