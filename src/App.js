@@ -10,14 +10,11 @@ import EditPage from './pages/EditPage';
 
 function App() {
   return (
-    <div class="temp-div">
       <HashRouter>
+      
+      <h1>I am the APP</h1>
       <div className="App">
           <Switch>
-            <h1>Lets start!</h1>
-            <Route exact path="/">
-              <HomePage/>
-            </Route>
             <Route exact path="/login">
               <LogInPage/>
             </Route>
@@ -30,12 +27,13 @@ function App() {
             <Route exact path="/edit">
               <EditPage/>
             </Route>
+            <Route exact path="/">
+              <HomePage/>
+            </Route>
               
           </Switch>
       </div>
     </HashRouter>
-    <SearchBar/>
-    </div>
     
 
   
