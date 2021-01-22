@@ -1,10 +1,12 @@
 import './App.css';
-import HashRouter from 'react-router-dom';
+import { HashRouter, Switch, Route } from "react-router-dom";
+import SearchBar from './component/SearchBar';
 
 
 function App() {
   return (
-    <HashRouter>
+    <div class="temp-div">
+      <HashRouter>
       <div className="App">
           <Switch>
             <h1>Lets start!</h1>
@@ -23,11 +25,13 @@ function App() {
             <Route exact path="/edit">
               {/* add homepage */}
             </Route>
-          
-
+              
           </Switch>
       </div>
     </HashRouter>
+    <SearchBar/>
+    </div>
+    
 
   
   );
