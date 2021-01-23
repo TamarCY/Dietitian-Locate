@@ -8,20 +8,40 @@ import ResPage from './pages/ResPage';
 import EditPage from './pages/EditPage';
 import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react'
+import MyNav from './component/MyNav';
 
 
 class App extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      activeUser: null
+      activeUser:{
+        "id": 1,
+        "fname": "Tamar",
+        "lname": "Cohen",
+        "email": "tanar@gmail.com",
+        "pwd": "123"
+      }
+          
     }
+    // this.state={
+    //   activeUser: null
+          
+    // }
+    this.handleLogout =  this.handleLogout.bind(this)
+  }
+
+  handleLogout(){
+    this.setState({activeUser:null})
   }
   render(){
     return (
       <HashRouter>
       
       <container>
+          <Route exact path={["/","/res"]}>
+              <MyNav activeUser={this.state.activeUser} handleLogout={this.handleLogout}/>
+          </Route>
           <Switch>
             <Route exact path="/login">
               <LogInPage/>
