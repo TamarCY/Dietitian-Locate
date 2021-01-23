@@ -1,3 +1,4 @@
+import Button from 'react-bootstrap/Button';
 import React from 'react'
 
 class SearchBar extends React.Component {

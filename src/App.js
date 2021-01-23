@@ -6,14 +6,22 @@ import LogInPage from './pages/LogInPage';
 import SignUpPage from './pages/SignUpPage';
 import ResPage from './pages/ResPage';
 import EditPage from './pages/EditPage';
+import 'bootstrap/dist/css/bootstrap.css';
+import React from 'react'
 
 
-function App() {
-  return (
+class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state={
+      activeUser: null
+    }
+  }
+  render(){
+    return (
       <HashRouter>
       
-      <h1>I am the APP</h1>
-      <div className="App">
+      <container>
           <Switch>
             <Route exact path="/login">
               <LogInPage/>
@@ -32,12 +40,14 @@ function App() {
             </Route>
               
           </Switch>
-      </div>
+      </container>
     </HashRouter>
     
 
-  
-  );
+    )
+  }
 }
+
+
 
 export default App;
