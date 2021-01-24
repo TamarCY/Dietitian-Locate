@@ -6,9 +6,10 @@ import LogInPage from './pages/LogInPage';
 import SignUpPage from './pages/SignUpPage';
 import ResPage from './pages/ResPage';
 import EditPage from './pages/EditPage';
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react'
 import MyNav from './component/MyNav';
+import { Container } from 'react-bootstrap';
 
 
 class App extends React.Component{
@@ -17,8 +18,8 @@ class App extends React.Component{
     this.state={
       activeUser:{
         "id": 1,
-        "fname": "Tamar",
-        "lname": "Cohen",
+        "fname": "תמר",
+        "lname": "כהן יוגב",
         "email": "tanar@gmail.com",
         "pwd": "123"
       }
@@ -38,7 +39,7 @@ class App extends React.Component{
     return (
       <HashRouter>
       
-      <container>
+      <Container>
           <Route exact path={["/","/res"]}>
               <MyNav activeUser={this.state.activeUser} handleLogout={this.handleLogout}/>
           </Route>
@@ -60,7 +61,7 @@ class App extends React.Component{
             </Route>
               
           </Switch>
-      </container>
+      </Container>
     </HashRouter>
     
 
