@@ -58,6 +58,11 @@ class EditPage extends React.Component {
         </Form.Group>
     </Form.Row> */}
     
+    <Form.Row>
+      <Form.Label>תמונה</Form.Label>
+      <Form.Control type="text" />
+    </Form.Row>
+
   <Form.Row>
     <Form.Group as={Col} controlId="formGridEmail">
       <Form.Label>Email</Form.Label>
