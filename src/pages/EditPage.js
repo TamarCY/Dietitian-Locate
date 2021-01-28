@@ -9,9 +9,10 @@ class EditPage extends React.Component {
     constructor(props){
         super(props);
         this.state={
-            diet: {
+
                 fname:'',
                 lname:'',
+                imgUrl:'',
                 email:'',
                 phone:'',
                 languages:[],
@@ -21,7 +22,7 @@ class EditPage extends React.Component {
 
 
 
-            }
+            
         }
     }
     render(){
@@ -38,11 +39,13 @@ class EditPage extends React.Component {
     <Row>
         <Col>
         <Form.Label>שם פרטי</Form.Label>
-        <Form.Control placeholder="ְשם פרטי" />
+        <Form.Control placeholder="ְשם פרטי" value={this.state.fname} 
+        onChange={(event)=> this.setState({fname : event.target.value})} />
         </Col>
         <Col>
         <Form.Label>שם משפחה</Form.Label>
-        <Form.Control placeholder="שם משפחה" />
+        <Form.Control placeholder="שם משפחה" value={this.state.lname} 
+        onChange={(event)=> this.setState({lname : event.target.value})}/>
         </Col>
     </Row>
 
