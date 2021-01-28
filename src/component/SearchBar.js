@@ -1,5 +1,7 @@
-import Button from 'react-bootstrap/Button';
 import React from 'react'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import { Card, Col, Container, Row } from 'react-bootstrap';
 
 class SearchBar extends React.Component {
     render(){
@@ -13,3 +15,4 @@ class SearchBar extends React.Component {
 }
 
 export default SearchBar;
+
