@@ -14,15 +14,19 @@ class LogInPage extends React.Component {
     //i can change to .find instes loop
     validateLogin = () => {
         for( let i = 0; i< users.length; i++) {
+            // debugger
             if( users[i].pwd == this.state.pwd && users[i].email == this.state.email) {
-                // this.props.handleLogin(users[i])
+                this.props.handleLogin(users[i])
+                let user = users[i].fname
+                alert(user)
                 window.location = '/'
                 return;
+        }
         }
    
   
         alert('user not found');
-        }
+        
     }
     render(){
         return(
@@ -60,7 +64,7 @@ class LogInPage extends React.Component {
             </div>
         )
     }
-        
+   
 }
 
 export default LogInPage;

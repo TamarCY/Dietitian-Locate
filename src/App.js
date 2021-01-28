@@ -25,29 +25,30 @@ class App extends React.Component{
     }
 
     this.state={
-      // activeUser: null,
-      activeUser:{
-        "id": 1,
-        "fname": "תמר",
-        "lname": "כהן יוגב",
-        "email": "tanar@gmail.com",
-        "pwd": "123"
-      },
+      activeUser: null,
+      // activeUser:{
+      //   "id": 1,
+      //   "fname": "תמר",
+      //   "lname": "כהן יוגב",
+      //   "email": "tanar@gmail.com",
+      //   "pwd": "123"
+      // },
       dietData: dietData,
           
     }
   
    
     this.handleLogout =  this.handleLogout.bind(this)
-    // this.handleLogin =  this.handleLogin.bind(this)
+    this.handleLogin =  this.handleLogin.bind(this)
     this.addDiet = this.addDiet.bind(this)
 
 
   }
 
-  // handleLogin(userObj){
-  //   this.setState({activeUser:userObj})
-  // }
+  handleLogin(userObj){
+    this.setState({activeUser:userObj})
+    
+  }
   handleLogout(){
     this.setState({activeUser:null})
   }
