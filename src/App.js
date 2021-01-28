@@ -10,42 +10,67 @@ import EditPage from './pages/EditPage';
 import React from 'react'
 import MyNav from './component/MyNav';
 import { Container } from 'react-bootstrap';
+import dietJSON from './data/diet.json';
 
 
 class App extends React.Component{
   constructor(props){
     super(props);
+    let dietData;
+    if (localStorage.getItem('localDiet')){
+      dietData = JSON.parse(localStorage.getItem('localDiet'));
+    }
+    else{
+      dietData = dietJSON;
+    }
+
     this.state={
+      // activeUser: null,
       activeUser:{
         "id": 1,
         "fname": "תמר",
         "lname": "כהן יוגב",
         "email": "tanar@gmail.com",
         "pwd": "123"
-      }
+      },
+      dietData: dietData,
           
     }
-    // this.state={
-    //   activeUser: null
-          
-    // }
+  
+   
     this.handleLogout =  this.handleLogout.bind(this)
+    // this.handleLogin =  this.handleLogin.bind(this)
+    this.addDiet = this.addDiet.bind(this)
+
+
   }
 
+  // handleLogin(userObj){
+  //   this.setState({activeUser:userObj})
+  // }
   handleLogout(){
     this.setState({activeUser:null})
   }
+  addDiet(dietObj){
+    this.setState({dietData:this.state.dietData.concat(dietObj)});
+    localStorage.setItem('localDiet',JSON.stringify(this.state.dietData.concat(dietObj)))
+  }
+
+ 
+
+
   render(){
     return (
       <HashRouter>
+        <div>
       
-      <Container>
-          <Route exact path={["/","/res"]}>
+          <Route exact path={["/","/res","/edit"]}>
               <MyNav activeUser={this.state.activeUser} handleLogout={this.handleLogout}/>
           </Route>
           <Switch>
             <Route exact path="/login">
-              <LogInPage/>
+      
+              <LogInPage  handleLogin={this.handleLogin}/>
             </Route>
             <Route exact path="/signup">
               <SignUpPage/>
@@ -54,14 +79,14 @@ class App extends React.Component{
               <ResPage/>
             </Route>
             <Route exact path="/edit">
-              <EditPage/>
+              <EditPage addDiet={this.addDiet} dietData={this.state.dietData} activeUser={this.state.activeUser}/>
             </Route>
             <Route exact path="/">
               <HomePage/>
             </Route>
               
           </Switch>
-      </Container>
+          </div>
     </HashRouter>
     
 

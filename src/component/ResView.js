@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 class ResView extends React.Component {
     render(){
         return(

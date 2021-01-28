@@ -1,6 +1,10 @@
 import React from 'react'
+import diet from '../data/diet.json'
 
 class ResPage extends React.Component {
+    constructor(props){
+        super(props)
+    }
     render(){
         return(
             <div className="res-page">

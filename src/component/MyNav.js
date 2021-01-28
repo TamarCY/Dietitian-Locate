@@ -9,7 +9,7 @@ const MyNav = function(props) {
 
     const loginEl = ( ! activeUser)  ?  <Nav.Link href="/#/login">התחברות</Nav.Link>  : null;
     const signupEl = ( ! activeUser) ?  <Nav.Link href="/#/signup">הרשמה</Nav.Link>  : null;
-    const logoutEl = (activeUser) ?  <Nav.Link className="ms-auto"  onClick={handleLogout}>החלפת משתמש.ת</Nav.Link> : null;
+    const logoutEl = (activeUser) ?  <Nav.Link className="ms-auto me-4"  onClick={handleLogout}>החלפת משתמש.ת</Nav.Link> : null;
     return (
         <Navbar bg="light" expand="lg">
   <Navbar.Brand href="/" ><img className=" m-1 logo-img" 
