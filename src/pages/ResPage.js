@@ -19,6 +19,7 @@ class ResPage extends React.Component {
                {/* <p>{this.props.result[0].languages}</p> */}
               
                                         <h2>I am  ResPage</h2>
+
             </Container>
         )
     }

@@ -7,10 +7,10 @@ class SearchBar extends React.Component {
     constructor(props){
         super(props);
         this.state={
-                languages:'',
+                languages:'hebrew',
                 expertis:[],
                 clinics:[],
-                location:''
+                location:'c'
         }
     }
 
@@ -34,7 +34,7 @@ class SearchBar extends React.Component {
    
        sendAndClose = () =>{
          this.props.searchDiet(this.state);
-         window.location = '/#/res'
+        //  window.location = '/#/res'
        }
 
     render(){
@@ -103,7 +103,7 @@ class SearchBar extends React.Component {
                 <Form.Group as={Col} controlId="formGridLocation">
                     <Form.Label>אזור</Form.Label>
                     <Form.Control value={this.state.loctaion} onClick={(event)=>
-                        {this.setState({location:event.target.value})}} as="select" defaultValue="בחר אזור">
+                        {this.setState({location:event.target.value})}} as="select" defaultValue="מרכז">
                         <option value="c">מרכז</option>
                         <option value="n">צפון</option>
                         <option value="s">דרום</option>

@@ -34,6 +34,8 @@ class App extends React.Component{
       //   "pwd": "123"
       // },
       dietData: dietData,
+          
+
       filteredData: []
           
     }
@@ -44,7 +46,10 @@ class App extends React.Component{
     this.addDiet = this.addDiet.bind(this)
     this.searchDiet = this.searchDiet.bind(this)
     this.searchLang = this.searchLang.bind(this)
+    this.searchExper = this.searchExper.bind(this)
+    this.checker = this.checker.bind(this)
 
+    
 
   }
 
@@ -63,17 +68,45 @@ class App extends React.Component{
 
   searchDiet(dietObj){
     this.searchLang(dietObj,this.state.dietData)
+    this.searchExper(dietObj,this.state.dietData)
+
 
     
   }
 
   searchLang(dietObj, resArr){
     
+    
     const langFilteredArr = resArr.filter(obj => obj.languages.includes(dietObj.languages));
-    console.log(langFilteredArr);
-    this.setState({filteredData:langFilteredArr})
+    // console.log(langFilteredArr);
+    // this.setState({filteredData:langFilteredArr})
+    return langFilteredArr;
   }
 
+  checker(arr, target){
+    return(target.every(v => arr.includes(v)))
+     
+  }
+ 
+
+
+  searchExper(dietObj, resArr){
+   
+    
+    const experFilteredArr = resArr.filter(arr=>(this.checker(arr.expertis,dietObj.expertis)));
+    
+    console.log(experFilteredArr);
+  }
+   
+  //   found (arr1,arr2){
+
+  //   return (arr1.some(r=> arr2.indexOf(r) >= 0))
+
+  // }
+
+  // searchClinic(dietObj,resArr){
+
+  // }
  
 
 

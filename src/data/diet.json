@@ -1,29 +1,18 @@
 [
 
-    {
-        "id":0,
-        "fname":"Gil",
-        "lname": "Yogev",
-        "imgUrl":"",
-        "email": "t@y.com",
-        "phone":"123",
-        "languages":["english"],
-        "expertis":[],
-        "clinics":[],
-        "location":""
-    },
-    {
-        "id":1,
-        "fname":"Noam",
-        "lname": "Yogev",
-        "imgUrl":"",
-        "email": "t@y.com",
-        "phone":"123",
-        "languages":["english"],
-        "expertis":[],
-        "clinics":[],
-        "location":""
-    }
+   
+{
+"clinics": [],
+"email": "",
+"expertis": ["diabetes"],
+"fname": "שרון",
+"id": 5,
+"imgUrl": "",
+"languages": [],
+"lname": "",
+"location": "",
+"phone": ""
+}
     
 
 ]
