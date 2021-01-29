@@ -2,7 +2,7 @@ import React from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { Card, Col, Container, Row } from 'react-bootstrap';
-
+import './EditPage.css';
 
 //where to store the diet data????
 class EditPage extends React.Component {
@@ -18,7 +18,8 @@ class EditPage extends React.Component {
                 languages:[],
                 expertis:[],
                 clinics:[],
-                location:''
+                location:'',
+                id:''
 
             
         }
@@ -40,10 +41,15 @@ class EditPage extends React.Component {
      }
       
     }
+
+    sendAndClose = () =>{
+      this.props.addDiet(this.state);
+      window.location = '/'
+    }
     render(){
         return(
-            <Container>
-                <Card >
+            <Container >
+                <Card className="mt-4">
                 {/* <Card border="secondary" style={{ width: '40rem' }}> */}
                     <Card.Header >
                     <h5 className="card-title">פרטי דיאטנ.ית</h5></Card.Header>
@@ -127,12 +133,12 @@ class EditPage extends React.Component {
     {['checkbox'].map((type) => (
     <div key={`inline-${type}`} className="mb-3">
       <Form.Check inline label="עברית"  type={type} id={`inline-${type}-1`} value="hebrew" name="languages"  onChange={this.changeOption}/>
-      <Form.Check inline label="אנגלית" type={type} id={`inline-${type}-2`} value="english" name="languages"  onChange={this.changeLang}/>
-      <Form.Check inline label="רוסית" type={type} id={`inline-${type}-3`} value="russian" name="languages"  onChange={this.changeLang}/>
-      <Form.Check inline label="ערבית" type={type} id={`inline-${type}-4`} value="arabic" name="languages"  onChange={this.changeLang}/>
-      <Form.Check inline label="צרפתית" type={type} id={`inline-${type}-5`} value="french" name="languages"  onChange={this.changeLang}/>
-      <Form.Check inline label="ספרדית" type={type} id={`inline-${type}-6`} value="spanish" name="languages"  onChange={this.changeLang}/>
-      <Form.Check inline label="גרמנית" type={type} id={`inline-${type}-7`} value="german" name="languages"  onChange={this.changeLang}/>      
+      <Form.Check inline label="אנגלית" type={type} id={`inline-${type}-2`} value="english" name="languages"  onChange={this.changeOption}/>
+      <Form.Check inline label="רוסית" type={type} id={`inline-${type}-3`} value="russian" name="languages"  onChange={this.changeOption}/>
+      <Form.Check inline label="ערבית" type={type} id={`inline-${type}-4`} value="arabic" name="languages"  onChange={this.changeOption}/>
+      <Form.Check inline label="צרפתית" type={type} id={`inline-${type}-5`} value="french" name="languages"  onChange={this.changeOption}/>
+      <Form.Check inline label="ספרדית" type={type} id={`inline-${type}-6`} value="spanish" name="languages"  onChange={this.changeOption}/>
+      <Form.Check inline label="גרמנית" type={type} id={`inline-${type}-7`} value="german" name="languages"  onChange={this.changeOption}/>     
     </div>
   ))}
   </Form.Group>
@@ -217,13 +223,13 @@ class EditPage extends React.Component {
       <Form.Label>אזור</Form.Label>
       <Form.Control value={this.state.loctaion} onClick={(event)=>
         {this.setState({location:event.target.value})}} as="select" defaultValue="בחר אזור">
-        <option value="n">צפון</option>
         <option value="c">מרכז</option>
+        <option value="n">צפון</option>
         <option value="s">דרום</option>
       </Form.Control>
     </Form.Group>
     <br/>
-    <Button variant="primary" type="button">
+    <Button variant="primary" type="button" onClick={this.sendAndClose}> 
         שליחה
     </Button>
 

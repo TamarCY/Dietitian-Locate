@@ -1,27 +1,27 @@
 [
 
     {
-        "id":1,
+        "id":0,
         "fname":"Gil",
-        "lname": "Yogev",
-        "imgUrl":"https://www.google.com/imgres?imgurl=https%3A%2F%2Fhomediet.co.il%2Fwp-content%2Fuploads%2FTully-0O0A6063-365x365.jpg&imgrefurl=https%3A%2F%2Fhomediet.co.il%2Fnutritionists%2Ftamar%2F&tbnid=BHpKL9FbjvIQ_M&vet=12ahUKEwiH7_m28LvuAhWR5RoKHWU_BaMQMygAegUIARCWAQ..i&docid=kceb9YvEef35CM&w=365&h=365&q=%D7%AA%D7%9E%D7%A8%20%D7%9B%D7%94%D7%9F%20%D7%99%D7%95%D7%92%D7%91&ved=2ahUKEwiH7_m28LvuAhWR5RoKHWU_BaMQMygAegUIARCWAQ",
-        "email": "g@y.com",
-        "phone":"123",
-        "languages":"",
-        "expertis":"",
-        "clinics":"",
-        "location":""
-    },
-    {
-        "id":2,
-        "fname":"Tamar",
         "lname": "Yogev",
         "imgUrl":"",
         "email": "t@y.com",
         "phone":"123",
-        "languages":"",
-        "expertis":"",
-        "clinics":"",
+        "languages":["english"],
+        "expertis":[],
+        "clinics":[],
+        "location":""
+    },
+    {
+        "id":1,
+        "fname":"Noam",
+        "lname": "Yogev",
+        "imgUrl":"",
+        "email": "t@y.com",
+        "phone":"123",
+        "languages":["english"],
+        "expertis":[],
+        "clinics":[],
         "location":""
     }
     

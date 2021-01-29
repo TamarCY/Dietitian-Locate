@@ -34,6 +34,7 @@ class App extends React.Component{
       //   "pwd": "123"
       // },
       dietData: dietData,
+      filteredData: []
           
     }
   
@@ -41,6 +42,8 @@ class App extends React.Component{
     this.handleLogout =  this.handleLogout.bind(this)
     this.handleLogin =  this.handleLogin.bind(this)
     this.addDiet = this.addDiet.bind(this)
+    this.searchDiet = this.searchDiet.bind(this)
+    this.searchLang = this.searchLang.bind(this)
 
 
   }
@@ -53,8 +56,22 @@ class App extends React.Component{
     this.setState({activeUser:null})
   }
   addDiet(dietObj){
+    dietObj.id = this.state.dietData.length;
     this.setState({dietData:this.state.dietData.concat(dietObj)});
     localStorage.setItem('localDiet',JSON.stringify(this.state.dietData.concat(dietObj)))
+  }
+
+  searchDiet(dietObj){
+    this.searchLang(dietObj,this.state.dietData)
+
+    
+  }
+
+  searchLang(dietObj, resArr){
+    
+    const langFilteredArr = resArr.filter(obj => obj.languages.includes(dietObj.languages));
+    console.log(langFilteredArr);
+    this.setState({filteredData:langFilteredArr})
   }
 
  
@@ -65,9 +82,9 @@ class App extends React.Component{
       <HashRouter>
         <div>
       
-          <Route exact path={["/","/res","/edit"]}>
+          {/* <Route exact path={["/","/res","/edit"]}>
               <MyNav activeUser={this.state.activeUser} handleLogout={this.handleLogout}/>
-          </Route>
+          </Route> */}
           <Switch>
             <Route exact path="/login">
       
@@ -76,14 +93,16 @@ class App extends React.Component{
             <Route exact path="/signup">
               <SignUpPage/>
             </Route>
-            <Route exact path="/res">
-              <ResPage/>
+            <Route exact path="/res" >
+              <ResPage result={this.state.filteredData}/>
             </Route>
             <Route exact path="/edit">
               <EditPage addDiet={this.addDiet} dietData={this.state.dietData} activeUser={this.state.activeUser}/>
             </Route>
             <Route exact path="/">
+            
               <HomePage/>
+              <SearchBar searchDiet={this.searchDiet}/>
             </Route>
               
           </Switch>
