@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Container, CardDeck} from 'react-bootstrap'
+import {Card, Container, CardDeck, Table} from 'react-bootstrap'
 import diet from '../data/diet.json'
 import './ResPage.css'
 
@@ -12,13 +12,44 @@ class ResPage extends React.Component {
     }
 }
 
+    // displyClinics(dietObj){
+    //     for (let i=0; i<this.props; i++){
+
+    // }
     
     render(){
+        const dietTableRows = [];
+        console.log(this.props.results);
+        for (let i=0; i<this.props; i++){
+            const rowContent = <tr>
+                <td>{this.props.results[i].imgUrl}</td>
+                <td>{this.props.results[i].fname}</td>
+                <td>{this.props.results[i].lname}</td>
+                <td>{this.props.results[i].phone}</td>
+                <td>{this.props.results[i].email}</td>
+
+                {/* <td>{this.props.results[i].clinics}</td> */}          
+            </tr>
+            dietTableRows.push(rowContent);
+        }
         return(
             <Container className="res-page">
-               {/* <p>{this.props.result[0].languages}</p> */}
+                <Table striped hover>
+                 <thead>
+                    <tr>
+                        <th></th>
+                        <th>שם</th>
+                        <th>שם משפחה</th>
+                        <th>טלפון </th>
+                        <th>מייל</th>
+                    </tr>
+            </thead>
+            <tbody>
+                 {dietTableRows}
+            </tbody>
+    </Table>
               
-                                        <h2>I am  ResPage</h2>
+                                       
 
             </Container>
         )

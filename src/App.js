@@ -136,7 +136,7 @@ class App extends React.Component{
               <SignUpPage/>
             </Route>
             <Route exact path="/res" >
-              <ResPage result={this.state.filteredData}/>
+              <ResPage results={this.state.filteredData}/>
             </Route>
             <Route exact path="/edit">
               <EditPage addDiet={this.addDiet} dietData={this.state.dietData} activeUser={this.state.activeUser}/>
