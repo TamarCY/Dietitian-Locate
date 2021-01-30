@@ -20,9 +20,10 @@ class ResPage extends React.Component {
     render(){
         const dietTableRows = [];
         console.log(this.props.results);
-        for (let i=0; i<this.props; i++){
+        
+        for (let i=0; i<this.props.results.length; i++){
             const rowContent = <tr>
-                <td>{this.props.results[i].imgUrl}</td>
+                <td><img src={this.props.results[i].imgUrl}/></td>
                 <td>{this.props.results[i].fname}</td>
                 <td>{this.props.results[i].lname}</td>
                 <td>{this.props.results[i].phone}</td>
@@ -34,6 +35,7 @@ class ResPage extends React.Component {
         }
         return(
             <Container className="res-page">
+                <h1>תוצאות</h1>
                 <Table striped hover>
                  <thead>
                     <tr>

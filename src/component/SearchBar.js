@@ -34,7 +34,7 @@ class SearchBar extends React.Component {
    
        sendAndClose = () =>{
          this.props.searchDiet(this.state);
-        //  window.location = '/#/res'
+         window.location = '/#/res'
        }
 
     render(){

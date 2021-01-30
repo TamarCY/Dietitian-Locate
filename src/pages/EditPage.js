@@ -52,7 +52,7 @@ class EditPage extends React.Component {
                 <Card className="mt-4">
                 {/* <Card border="secondary" style={{ width: '40rem' }}> */}
                     <Card.Header >
-                    <h5 className="card-title">פרטי דיאטנ.ית</h5></Card.Header>
+                    <h5 className="card-title">הוספת דיאטנ.ית</h5></Card.Header>
                     <Card.Body>
 
             <Form >
