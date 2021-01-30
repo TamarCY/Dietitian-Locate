@@ -48,6 +48,8 @@ class App extends React.Component{
     this.searchLang = this.searchLang.bind(this)
     this.searchExper = this.searchExper.bind(this)
     this.checker = this.checker.bind(this)
+    this.searchClinic = this.searchClinic.bind(this)
+    this.contain = this.contain.bind(this)
 
     
 
@@ -57,9 +59,11 @@ class App extends React.Component{
     this.setState({activeUser:userObj})
     
   }
+
   handleLogout(){
     this.setState({activeUser:null})
   }
+
   addDiet(dietObj){
     dietObj.id = this.state.dietData.length;
     this.setState({dietData:this.state.dietData.concat(dietObj)});
@@ -69,44 +73,40 @@ class App extends React.Component{
   searchDiet(dietObj){
     this.searchLang(dietObj,this.state.dietData)
     this.searchExper(dietObj,this.state.dietData)
+    this.searchClinic(dietObj,this.state.dietData) 
+        // this.setState({filteredData:langFilteredArr})
 
-
-    
   }
 
-  searchLang(dietObj, resArr){
-    
-    
-    const langFilteredArr = resArr.filter(obj => obj.languages.includes(dietObj.languages));
-    // console.log(langFilteredArr);
-    // this.setState({filteredData:langFilteredArr})
+  searchLang(dietObj, resArr){   
+    const langFilteredArr = resArr.filter(obj => obj.languages.includes(dietObj.languages));   
     return langFilteredArr;
   }
 
   checker(arr, target){
     return(target.every(v => arr.includes(v)))
-     
+   
   }
  
 
 
   searchExper(dietObj, resArr){
-   
-    
     const experFilteredArr = resArr.filter(arr=>(this.checker(arr.expertis,dietObj.expertis)));
+    return experFilteredArr;
     
-    console.log(experFilteredArr);
   }
    
-  //   found (arr1,arr2){
+  contain(arr1,arr2){
+    return (arr1.some(r=> arr2.indexOf(r) >= 0))
+  }
 
-  //   return (arr1.some(r=> arr2.indexOf(r) >= 0))
+  searchClinic(dietObj,resArr){   
+    const clinicFilteredArr = resArr.filter(arr=>(this.contain(arr.clinics,dietObj.clinics)));
+    console.log (clinicFilteredArr);
+    return clinicFilteredArr;
+  }
 
-  // }
-
-  // searchClinic(dietObj,resArr){
-
-  // }
+  
  
 
 
