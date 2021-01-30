@@ -11,6 +11,8 @@ import React from 'react'
 import MyNav from './component/MyNav';
 import { Container } from 'react-bootstrap';
 import dietJSON from './data/diet.json';
+import AddDietNav from './component/AddDietNav';
+
 
 
 class App extends React.Component{
@@ -127,6 +129,11 @@ class App extends React.Component{
           {/* <Route exact path={["/","/res","/edit"]}>
               <MyNav activeUser={this.state.activeUser} handleLogout={this.handleLogout}/>
           </Route> */}
+
+          <Route exact path={["/","/res"]}>
+            <AddDietNav/>
+          </Route>
+
           <Switch>
             <Route exact path="/login">
       

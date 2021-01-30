@@ -12,9 +12,9 @@ class HomePage extends React.Component {
         return(
             <div>
                    
-                <Navbar expand="lg" variant="light" bg="light">
-                    <Navbar.Brand href="/#/edit" className="ms-auto me-5">הוספת פרטי דיאטנ.ית</Navbar.Brand>
-                </Navbar>
+                {/* <Navbar expand="lg" variant="light" bg="light">
+                    <Navbar.Brand href="/#/edit" className="ms-auto me-5"> הוספת דיאטנ.ית למאגר</Navbar.Brand>
+                </Navbar> */}
                 <Container>
                 {/* <img src="https://image.freepik.com/free-photo/elegant-composition-set-lemons-white-surface_24972-1113.jpg */}
 
