@@ -18,7 +18,7 @@ class EditPage extends React.Component {
                 languages:[],
                 expertis:[],
                 clinics:[],
-                location:'',
+                location:'c',
                 id:''
 
             

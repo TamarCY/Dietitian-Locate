@@ -50,6 +50,9 @@ class App extends React.Component{
     this.checker = this.checker.bind(this)
     this.searchClinic = this.searchClinic.bind(this)
     this.contain = this.contain.bind(this)
+    this.searchLocation = this.searchLocation.bind(this)
+
+    
 
     
 
@@ -74,6 +77,8 @@ class App extends React.Component{
     this.searchLang(dietObj,this.state.dietData)
     this.searchExper(dietObj,this.state.dietData)
     this.searchClinic(dietObj,this.state.dietData) 
+    this.searchLocation(dietObj,this.state.dietData)
+
         // this.setState({filteredData:langFilteredArr})
 
   }
@@ -102,8 +107,13 @@ class App extends React.Component{
 
   searchClinic(dietObj,resArr){   
     const clinicFilteredArr = resArr.filter(arr=>(this.contain(arr.clinics,dietObj.clinics)));
-    console.log (clinicFilteredArr);
     return clinicFilteredArr;
+  }
+
+  searchLocation(dietObj,resArr){
+    const locationFilteredArr = resArr.filter(obj => (obj.location == dietObj.location));
+    console.log (locationFilteredArr);
+
   }
 
   
