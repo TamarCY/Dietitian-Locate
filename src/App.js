@@ -74,13 +74,13 @@ class App extends React.Component{
   }
 
   searchDiet(dietObj){
-    this.searchLang(dietObj,this.state.dietData)
-    this.searchExper(dietObj,this.state.dietData)
-    this.searchClinic(dietObj,this.state.dietData) 
-    this.searchLocation(dietObj,this.state.dietData)
-
-        // this.setState({filteredData:langFilteredArr})
-
+    const resLocation = this.searchLocation(dietObj,this.state.dietData);
+    const resLang = this.searchLang(dietObj,resLocation);
+    const resExper = this.searchExper(dietObj,resLang);
+    const resClinic = this.searchClinic(dietObj,resExper); 
+    const resultsArr= resClinic;
+    this.setState({filteredData:resultsArr})
+    console.log(resultsArr)
   }
 
   searchLang(dietObj, resArr){   
@@ -112,8 +112,7 @@ class App extends React.Component{
 
   searchLocation(dietObj,resArr){
     const locationFilteredArr = resArr.filter(obj => (obj.location == dietObj.location));
-    console.log (locationFilteredArr);
-
+    return locationFilteredArr
   }
 
   
