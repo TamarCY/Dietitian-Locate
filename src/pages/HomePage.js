@@ -18,7 +18,7 @@ class HomePage extends React.Component {
                 <Container>
                 {/* <img src="https://image.freepik.com/free-photo/elegant-composition-set-lemons-white-surface_24972-1113.jpg */}
 
-                <img src="https://image.freepik.com/free-vector/net-paper-cotton-shopping-bags-with-grocery-isolated-white_107791-4630.jpg"/> 
+                <img className="img-fluid d-block mx-auto" src="https://image.freepik.com/free-vector/net-paper-cotton-shopping-bags-with-grocery-isolated-white_107791-4630.jpg"/> 
                     {/* <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-delicious-fresh-fruit-and-vegetable-poster-banner-image_190809.jpg"/> */}
                     <div className="fruits">
                     <h1 > חפשו דיאטנים</h1>

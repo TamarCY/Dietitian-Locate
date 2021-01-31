@@ -75,6 +75,11 @@ class App extends React.Component{
     localStorage.setItem('localDiet',JSON.stringify(this.state.dietData.concat(dietObj)))
   }
 
+  
+  //remove diet
+
+  //update diet
+
   searchDiet(dietObj){
     const resLocation = this.searchLocation(dietObj,this.state.dietData);
     const resLang = this.searchLang(dietObj,resLocation);
@@ -148,8 +153,7 @@ class App extends React.Component{
             <Route exact path="/edit">
               <EditPage addDiet={this.addDiet} dietData={this.state.dietData} activeUser={this.state.activeUser}/>
             </Route>
-            <Route exact path="/">
-            
+            <Route exact path="/">           
               <HomePage/>
               <SearchBar searchDiet={this.searchDiet}/>
             </Route>

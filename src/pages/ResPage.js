@@ -23,7 +23,7 @@ class ResPage extends React.Component {
         
         for (let i=0; i<this.props.results.length; i++){
             const rowContent = <tr>
-                <td><img src={this.props.results[i].imgUrl}/></td>
+                <td><img className="img-fluid" src={this.props.results[i].imgUrl}/></td>
                 <td>{this.props.results[i].fname}</td>
                 <td>{this.props.results[i].lname}</td>
                 <td>{this.props.results[i].phone}</td>
@@ -36,7 +36,7 @@ class ResPage extends React.Component {
         return(
             <Container className="res-page">
                 <h1>תוצאות</h1>
-                <Table striped hover>
+                <Table striped hover responsive="md">
                  <thead>
                     <tr>
                         <th></th>

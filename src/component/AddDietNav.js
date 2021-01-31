@@ -4,7 +4,7 @@
 
 
 import React from 'react';
-import { Container, Jumbotron, Navbar } from 'react-bootstrap';
+import {Navbar} from 'react-bootstrap';
 import './AddDietNav.css';
 
 
