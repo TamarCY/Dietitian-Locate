@@ -1,3 +1,21 @@
 .diet-input{
     margin-top: 10%;
 }
+
+.editPage{
+
+    background-image: url("https://image.freepik.com/free-vector/linear-flat-fast-food-icons-seamless-pattern_1416-503.jpg") ;
+    width:100vw;
+    height:100vh;
+    
+}
+
+body{
+    margin: 0;
+    padding:0;
+}
+
+html{
+    margin: 0;
+    padding:0;
+}

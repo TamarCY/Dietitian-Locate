@@ -1,4 +1,4 @@
-import './App.css';
+
 import { HashRouter, Switch, Route } from "react-router-dom";
 import SearchBar from './component/SearchBar';
 import HomePage from './pages/HomePage';
@@ -132,7 +132,7 @@ class App extends React.Component{
   render(){
     return (
       <HashRouter>
-        <div>
+       
       
           {/* <Route exact path={["/","/res","/edit"]}>
               <MyNav activeUser={this.state.activeUser} handleLogout={this.handleLogout}/>
@@ -163,7 +163,7 @@ class App extends React.Component{
             </Route>
               
           </Switch>
-          </div>
+        
     </HashRouter>
     
 

@@ -48,8 +48,9 @@ class EditPage extends React.Component {
     }
     render(){
         return(
+          <div className="editPage pt-4">
             <Container >
-                <Card className="mt-4">
+                <Card >
                 {/* <Card border="secondary" style={{ width: '40rem' }}> */}
                     <Card.Header >
                     <h5 className="card-title">הוספת דיאטנ.ית</h5></Card.Header>
@@ -57,7 +58,7 @@ class EditPage extends React.Component {
 
             <Form >
 
-    <Row>
+        <Row>
         <Col>
         <Form.Label>שם פרטי</Form.Label>
         <Form.Control placeholder="ְשם פרטי" value={this.state.fname} 
@@ -239,30 +240,9 @@ class EditPage extends React.Component {
 
 
 </Container>
+</div>
 
-            // <div className="edit-page">
-            //     <Form>
-            //     <Form.Group controlId="formBasicEmail">
-            //         <Form.Label>Email address</Form.Label>
-            //         <Form.Control type="email" placeholder="Enter email" />
-            //         <Form.Text className="text-muted">
-            //         We'll never share your email with anyone else.
-            //         </Form.Text>
-            //     </Form.Group>
-
-            //     <Form.Group controlId="formBasicPassword">
-            //         <Form.Label>Password</Form.Label>
-            //         <Form.Control type="password" placeholder="Password" />
-            //     </Form.Group>
-            //     <Form.Group controlId="formBasicCheckbox">
-            //         <Form.Check type="checkbox" label="Check me out" />
-            //     </Form.Group>
-            //     <Button variant="primary" type="submit">
-            //         Submit
-            //     </Button>
-            //     </Form>
-            //     <h2>I am  EditPage</h2>
-            // </div>
+           
         )
     }
         
