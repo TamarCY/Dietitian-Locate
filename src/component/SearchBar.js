@@ -14,6 +14,11 @@ class SearchBar extends React.Component {
         }
     }
 
+    changeAndSend = (event) => {
+        this.changeOption(event);
+        this.sendAndClose();
+    }
+
     changeOption = (event)=>{
     
         if( this.state[event.target.name].includes(event.target.value)){
@@ -48,7 +53,7 @@ class SearchBar extends React.Component {
                 <Form.Label>תחומי עיסוק</Form.Label>
                 {['checkbox'].map((type) => (
                 <div key={`inline-${type}`} className="mb-3">
-                <Form.Check name="expertis" inline label="סוכרת" type={type} id={`inline-${type}-1`} value="diabetes"  onChange={this.changeOption} checked={this.state.expertis.includes("diabetes")}/>
+                <Form.Check name="expertis" inline label="סוכרת" type={type} id={`inline-${type}-1`} value="diabetes"  onChange={this.changeAndSend} checked={this.state.expertis.includes("diabetes")} />
                 <Form.Check name="expertis" inline label="ירידה במשקל" type={type} id={`inline-${type}-2`} value="weight"  onChange={this.changeOption}/>
                 <Form.Check name="expertis" inline label="ספורט" type={type} id={`inline-${type}-3`} value="sport"  onChange={this.changeOption}/>
                 <Form.Check name="expertis"inline label="בריאטריה" type={type} id={`inline-${type}-4`} value="bariatrics"  onChange={this.changeOption}/>
