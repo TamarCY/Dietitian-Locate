@@ -75,7 +75,7 @@ class App extends React.Component{
     localStorage.setItem('localDiet',JSON.stringify(this.state.dietData.concat(dietObj)))
   }
 
-  
+
   //remove diet
 
   //update diet
@@ -103,6 +103,9 @@ class App extends React.Component{
 
 
   searchExper(dietObj, resArr){
+    if(!dietObj.expertis){
+      return resArr
+    }
     const experFilteredArr = resArr.filter(arr=>(this.checker(arr.expertis,dietObj.expertis)));
     return experFilteredArr;
     
@@ -147,15 +150,16 @@ class App extends React.Component{
             <Route exact path="/signup">
               <SignUpPage/>
             </Route>
-            <Route exact path="/res" >
+            {/* <Route exact path="/res" >
               <ResPage results={this.state.filteredData}/>
-            </Route>
+            </Route> */}
             <Route exact path="/edit">
               <EditPage addDiet={this.addDiet} dietData={this.state.dietData} activeUser={this.state.activeUser}/>
             </Route>
             <Route exact path="/">           
               <HomePage/>
               <SearchBar searchDiet={this.searchDiet}/>
+              <ResPage results={this.state.filteredData}/>
             </Route>
               
           </Switch>
