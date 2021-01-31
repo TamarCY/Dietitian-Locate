@@ -9,7 +9,7 @@ class SearchBar extends React.Component {
         this.state={
                 languages:'hebrew',
                 expertis:["diabetes"],
-                clinics:[],
+                clinics:['mac'],
                 location:'c'
         }
     }
@@ -54,20 +54,20 @@ class SearchBar extends React.Component {
                 {['checkbox'].map((type) => (
                 <div key={`inline-${type}`} className="mb-3">
                 <Form.Check name="expertis" inline label="סוכרת" type={type} id={`inline-${type}-1`} value="diabetes"  onChange={this.changeAndSend} checked={this.state.expertis.includes("diabetes")} />
-                <Form.Check name="expertis" inline label="ירידה במשקל" type={type} id={`inline-${type}-2`} value="weight"  onChange={this.changeOption}/>
-                <Form.Check name="expertis" inline label="ספורט" type={type} id={`inline-${type}-3`} value="sport"  onChange={this.changeOption}/>
-                <Form.Check name="expertis"inline label="בריאטריה" type={type} id={`inline-${type}-4`} value="bariatrics"  onChange={this.changeOption}/>
-                <Form.Check name="expertis" inline label="נפרולוגיה" type={type} id={`inline-${type}-5`} value="nephrology" onChange={this.changeOption}/>
-                <Form.Check name="expertis" inline label="גריאטריה" type={type} id={`inline-${type}-6`} value="geriatrics"  onChange={this.changeOption}/>
-                <Form.Check name="expertis" inline label="אלרגיה" type={type} id={`inline-${type}-7`} value="allergy"  onChange={this.changeOption}/>   
-                <Form.Check name="expertis" inline label="ילדים" type={type} id={`inline-${type}-4`} value="kids"  onChange={this.changeOption}/>
-                <Form.Check name="expertis" inline label="פגים" type={type} id={`inline-${type}-5`} value="premature"  onChange={this.changeOption}/>
-                <Form.Check name="expertis" inline label="הריון ופוריות" type={type} id={`inline-${type}-6`} value="pregnancy"  onChange={this.changeOption}/>
-                <Form.Check name="expertis" inline label="הנקה" type={type} id={`inline-${type}-7`} value="nursing"  onChange={this.changeOption}/> 
-                <Form.Check name="expertis" inline label="פסיכיאטריה" type={type} id={`inline-${type}-8`} value="psychiatry"  onChange={this.changeOption}/>
-                <Form.Check name="expertis" inline label="צמחונות- טבעונות" type={type} id={`inline-${type}-9`} value="veg"  onChange={this.changeOption}/>
-                <Form.Check name="expertis" inline label="קידום בריאות" type={type} id={`inline-${type}-10`} value="promotion"  onChange={this.changeOption}/>
-                <Form.Check name="expertis" inline label="צליאק" type={type} id={`inline-${type}-11`} value="celiac"  onChange={this.changeOption}/>
+                <Form.Check name="expertis" inline label="ירידה במשקל" type={type} id={`inline-${type}-2`} value="weight"  onChange={this.changeAndSend}/>
+                <Form.Check name="expertis" inline label="ספורט" type={type} id={`inline-${type}-3`} value="sport"  onChange={this.changeAndSend}/>
+                <Form.Check name="expertis"inline label="בריאטריה" type={type} id={`inline-${type}-4`} value="bariatrics"  onChange={this.changeAndSend}/>
+                <Form.Check name="expertis" inline label="נפרולוגיה" type={type} id={`inline-${type}-5`} value="nephrology" onChange={this.changeAndSend}/>
+                <Form.Check name="expertis" inline label="גריאטריה" type={type} id={`inline-${type}-6`} value="geriatrics"  onChange={this.changeAndSend}/>
+                <Form.Check name="expertis" inline label="אלרגיה" type={type} id={`inline-${type}-7`} value="allergy"  onChange={this.changeAndSend}/>   
+                <Form.Check name="expertis" inline label="ילדים" type={type} id={`inline-${type}-4`} value="kids"  onChange={this.changeAndSend}/>
+                <Form.Check name="expertis" inline label="פגים" type={type} id={`inline-${type}-5`} value="premature"  onChange={this.changeAndSend}/>
+                <Form.Check name="expertis" inline label="הריון ופוריות" type={type} id={`inline-${type}-6`} value="pregnancy"  onChange={this.changeAndSend}/>
+                <Form.Check name="expertis" inline label="הנקה" type={type} id={`inline-${type}-7`} value="nursing"  onChange={this.changeAndSend}/> 
+                <Form.Check name="expertis" inline label="פסיכיאטריה" type={type} id={`inline-${type}-8`} value="psychiatry"  onChange={this.changeAndSend}/>
+                <Form.Check name="expertis" inline label="צמחונות- טבעונות" type={type} id={`inline-${type}-9`} value="veg"  onChange={this.changeAndSend}/>
+                <Form.Check name="expertis" inline label="קידום בריאות" type={type} id={`inline-${type}-10`} value="promotion"  onChange={this.changeAndSend}/>
+                <Form.Check name="expertis" inline label="צליאק" type={type} id={`inline-${type}-11`} value="celiac"  onChange={this.changeAndSend}/>
             
             
                 </div>
