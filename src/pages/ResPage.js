@@ -35,16 +35,17 @@ class ResPage extends React.Component {
         }
         return(
             <Container className="res-page">
-                <h1>תוצאות</h1>
-                <Table striped hover responsive="md">
+                {/* <h1>תוצאות</h1> */}
+                <Table striped hover  responsive="md" className="mt-5
+                "> 
                  <thead>
-                    <tr>
+                    {/* <tr>
                         <th></th>
                         <th>שם</th>
                         <th>שם משפחה</th>
                         <th>טלפון </th>
                         <th>מייל</th>
-                    </tr>
+                    </tr> */}
             </thead>
             <tbody>
                  {dietTableRows}
