@@ -4,14 +4,14 @@
 {
 "clinics": ["mac"],
 "email": "",
-"expertis": ["diabetes"],
-"fname": "שרון",
+"expertis": ["bariatrics"],
+"fname": "ענבל",
+"lname": "בלוג",
 "id": 5,
-"imgUrl": "",
-"languages": [],
-"lname": "",
-"location": "",
-"phone": ""
+"imgUrl": "https://static.wixstatic.com/media/1538e9_7aebc6c1091545c09e4149514ac6939a~mv2_d_1500_2102_s_2.jpg/v1/fill/w_140,h_192,al_c,q_80,usm_0.66_1.00_0.01/1538e9_7aebc6c1091545c09e4149514ac6939a~mv2_d_1500_2102_s_2.webp",
+"languages": ["hebrew"],
+"location": "n",
+"phone": "050-00000"
 }
     
 
