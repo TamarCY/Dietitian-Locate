@@ -27,7 +27,8 @@ class ResPage extends React.Component {
                 <td>{this.props.results[i].fname}</td>
                 <td>{this.props.results[i].lname}</td>
                 <td>{this.props.results[i].phone}</td>
-                <td><a></a>{this.props.results[i].email}</td>
+                {/* <td><a><i class="far fa-envelope"></i></a>{this.props.results[i].email}</td> */}
+                <td><a href={this.props.results[i].email}><i class="far fa-envelope"></i></a></td>
 
 
                 {/* <td>{this.props.results[i].clinics}</td> */}          
